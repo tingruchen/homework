@@ -7,10 +7,18 @@ a {
   color: #292929;
 }
 
-form {
+button, a {
+  font-size: 16px;
+}
+
+form:not(.hidden) {
   border-radius: 16px;
   background: white;
   padding: 16px;
+}
+
+form.hidden {
+  display: inline-block;
 }
 
 input {
@@ -27,6 +35,7 @@ input {
   background: white;
   color: green;
   padding: 4px 8px;
+  cursor: pointer;
 }
 
 .submit {
@@ -38,6 +47,11 @@ input {
 
 .create, .edit {
   background: green;
+  color: white;
+}
+
+.delete {
+  background: red;
   color: white;
 }
 

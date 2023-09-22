@@ -12,7 +12,8 @@
     <a href="/action/logout.php" class="btn">登出</a>
     <hr />
     <h1>會員中心</h1>
-    <form action="./action/update.php?id=<?php echo $_GET['id']?>" method="post">
+    <form action="./action/update.php" method="post">
+      <input type="hidden" id="id" name="id" value="<?php echo $_GET['id'] ?>">
       <label for="user_firstName">* 名字:</label><br>
       <input type="text" id="user_firstName" name="user_firstName" value="<?php echo $_SESSION['member']['user_firstName']?>"><br>
       <label for="user_lastName">* 姓氏:</label><br>

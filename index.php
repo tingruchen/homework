@@ -8,7 +8,9 @@
       session_start();
       if (!empty($_SESSION["member"])) { ?>
         <a href="./user?id=<?php echo $_SESSION['member']['user_id']?>" class="btn">會員中心</a>
-        <a href="./action/logout.php" class="btn">登出</a>
+        <form action="./action/logout.php" method="post" class="hidden">
+          <button type="submit" class="btn">登出</button>
+        </form>
         <hr />
         <h1><?php echo "歡迎~". $_SESSION["member"]["user_firstName"]; ?></h1>
       <?php } else { ?>
@@ -25,12 +27,12 @@
     <?php if (!empty($_SESSION["member"])) { ?>
       <h3>新增文章</h3>
       <form action="./blog/action/create.php?id=<?php echo $_SESSION['member']['user_id']?>" method="post">
-          <label for="blog_title">* 標題:</label>
-          <input type="text" id="blog_title" name="blog_title"><br>
-          <label for="blog_content">* 內容:</label>
-          <textarea id="blog_content" name="blog_content"></textarea><br><br>
-          <button type="submit" class="submit">新增</button>
-        </form>
+        <label for="blog_title">* 標題:</label>
+        <input type="text" id="blog_title" name="blog_title"><br>
+        <label for="blog_content">* 內容:</label>
+        <textarea id="blog_content" name="blog_content"></textarea><br><br>
+        <button type="submit" class="submit">新增</button>
+      </form>
     <?php } ?>
     <div class="blog-list">
       <?php
