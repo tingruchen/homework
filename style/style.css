@@ -21,7 +21,7 @@ form.hidden {
   display: inline-block;
 }
 
-input {
+input, textarea {
   border: 1px solid gray;
   border-radius: 4px;
   padding: 4px 8px;

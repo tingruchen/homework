@@ -7,7 +7,7 @@
   <?php session_start(); ?>
     <a href="/" class="btn">首頁</a>
     <a href="../user?id=<?php echo $_SESSION['member']['user_id']?>" class="btn">會員中心</a>
-    <form action="./action/logout.php" method="post" class="hidden">
+    <form action="../action/logout.php" method="post" class="hidden">
       <button type="submit" class="btn">登出</button>
     </form>
     <hr />
@@ -25,14 +25,18 @@
       unset($connect);
     }
   ?>
-  <h1>編輯文章</h1>
-  <form action="./action/update.php" method="post">
-    <input type="hidden" id="id" name="id" value="<?php echo $_GET['id'] ?>">
-    <label for="blog_title">* 標題:</label>
-    <input type="text" id="blog_title" name="blog_title" value="<?php echo $result["blog_title"]?>"><br>
-    <label for="blog_content">* 內容:</label>
-    <textarea id="blog_content" name="blog_content"><?php echo $result["blog_content"]?></textarea><br><br>
-    <button type="submit" class="submit">修改</button>
-  </form>
+  <?php if (!$result) {
+    include "../error/404.php";
+  } else { ?>
+    <h1>編輯文章</h1>
+    <form action="./action/update.php" method="post">
+      <input type="hidden" id="id" name="id" value="<?php echo $_GET['id'] ?>">
+      <label for="blog_title">* 標題:</label>
+      <input type="text" id="blog_title" name="blog_title" value="<?php echo $result["blog_title"]?>"><br>
+      <label for="blog_content">* 內容:</label>
+      <textarea id="blog_content" name="blog_content"><?php echo $result["blog_content"]?></textarea><br><br>
+      <button type="submit" class="submit">修改</button>
+    </form>
+    <?php } ?>
   </body>
 </html>

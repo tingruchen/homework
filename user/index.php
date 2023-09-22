@@ -9,7 +9,7 @@
     include "../error/404.php";
   } else { ?>
     <a href="/" class="btn">首頁</a>
-    <a href="/action/logout.php" class="btn">登出</a>
+    <a href="../action/logout.php" class="btn">登出</a>
     <hr />
     <h1>會員中心</h1>
     <form action="./action/update.php" method="post">

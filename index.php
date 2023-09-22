@@ -45,7 +45,7 @@
           foreach ($result as $blog_key => $blog) {?>
            <a href="./blog/index.php?id=<?php echo $blog["blog_id"]?>">
             <div class="blog-card">
-              <h3><?php echo $blog["blog_title"] ?></h3>
+              <h3><?php echo $blog["blog_id"] ?> <?php echo $blog["blog_title"] ?></h3>
               <p><?php echo $blog["blog_content"] ?></p>
             </div>
             </a>
