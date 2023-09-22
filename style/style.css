@@ -1,6 +1,27 @@
+body {
+  background: #f3f3f3;
+}
+
+a {
+  text-decoration: none;
+  color: #292929;
+}
+
+form {
+  border-radius: 16px;
+  background: white;
+  padding: 16px;
+}
+
+input {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 4px 0;
+}
+
 .btn {
   display: inline-block;
-  text-decoration: none;
   border: 1px solid green;
   border-radius: 4px;
   background: white;
@@ -15,8 +36,23 @@
   padding: 4px 8px;
 }
 
+.create, .edit {
+  background: green;
+  color: white;
+}
+
+.blog-list {
+  padding: 16px 0;
+}
+
 .blog-card {
-  padding: 16px;
+  margin: 16px 0;
+  padding: 4px 16px;
+  background: white;
   border: 1px solid gray;
   border-radius: 16px;
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 8px 0 rgba(41, 41, 41, 0.2);
 }

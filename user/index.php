@@ -18,7 +18,7 @@
       <label for="user_lastName">* 姓氏:</label><br>
       <input type="text" id="user_lastName" name="user_lastName" value="<?php echo $_SESSION['member']['user_lastName']?>"><br><br>
       <button type="submit" class="submit">修改</button>
-    </form> 
+    </form>
   <?php } ?>
   </body>
 </html>

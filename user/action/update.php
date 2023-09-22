@@ -5,7 +5,9 @@ if (!$_POST) {
 
 include "../../action/connect.php";
 
-$sql = "UPDATE user SET user_firstName = '".$_POST["user_firstName"]."', user_lastName='".$_POST["user_lastName"]."' WHERE user_id = '".$_GET['id']."'";
+$sql = "UPDATE user
+  SET user_firstName = '".$_POST["user_firstName"]."', user_lastName='".$_POST["user_lastName"]."'
+  WHERE user_id = '".$_GET['id']."'";
 $stmt = $connect -> prepare($sql);
 $stmt -> execute();
 
