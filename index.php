@@ -37,7 +37,7 @@
     <div class="blog-list">
       <?php
         include "./action/connect.php";
-        $sql = "SELECT * FROM blog LIMIT 12";
+        $sql = "SELECT * FROM blog ORDER BY blog_modifyDate DESC";
         $stmt = $connect -> prepare($sql);
         $stmt -> execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -47,6 +47,7 @@
             <div class="blog-card">
               <h3><?php echo $blog["blog_id"] ?> <?php echo $blog["blog_title"] ?></h3>
               <p><?php echo $blog["blog_content"] ?></p>
+              <p>更新時間：<?php echo $blog["blog_modifyDate"]?></p>
             </div>
             </a>
           <?php }
