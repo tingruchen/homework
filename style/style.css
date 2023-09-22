@@ -1,0 +1,22 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid green;
+  border-radius: 4px;
+  background: white;
+  color: green;
+  padding: 4px 8px;
+}
+
+.submit {
+  border-radius: 4px;
+  background: green;
+  color: white;
+  padding: 4px 8px;
+}
+
+.blog-card {
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
