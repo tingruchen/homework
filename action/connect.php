@@ -16,21 +16,4 @@
     echo "Connection failed: ".$e->getMessage();
       exit();
   }
-
-  // $sql = "SELECT * FROM `user`";
-  // $stmt = $connect->prepare($sql);
-  // $stmt->execute();
-
-  // // 取得單筆資料
-  // $data = $stmt->fetch(PDO::FETCH_ASSOC);
-  // if (!empty($data)) {
-  //   foreach ($data as $key => $value) {
-  //     echo "$key: $value<br/>";
-  //   }
-  // }
-
-  // // 取得多筆資料
-  // $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-  // unset($connect);
 ?>

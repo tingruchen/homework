@@ -43,7 +43,7 @@
     <p>作者：<?php echo $result["user_firstName"]?> <?php echo $result["user_lastName"]?></p>
     <p>更新時間：<?php echo $result["blog_modifyDate"]?></p>
     <?php if (!empty($_SESSION["member"]) && $_SESSION["member"]['user_id'] == $result["blog_fk"]) { ?>
-      <a href="./edit.php?id=<?php echo $_GET['id']?>" class="btn edit">編輯</a>
+      <a href="./edit.php?id=<?php echo $_GET['id'] ?>" class="btn edit">編輯</a>
       <form action="./action/delete.php" method="post" class="hidden">
         <input type="hidden" id="id" name="id" value="<?php echo $_GET['id'] ?>">
         <button type="submit" class="btn delete">刪除</button>

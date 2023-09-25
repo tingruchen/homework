@@ -37,17 +37,28 @@
     <div class="blog-list">
       <?php
         include "./action/connect.php";
-        $sql = "SELECT * FROM blog ORDER BY blog_modifyDate DESC";
+        $sql = "SELECT user.user_id, user.user_firstName, user.user_lastName, blog.blog_id, blog.blog_title, blog.blog_content, blog_modifyDate, blog.blog_fk
+        FROM user
+        INNER JOIN blog
+        ON user.user_id = blog.blog_fk
+        ORDER BY blog_modifyDate DESC";
         $stmt = $connect -> prepare($sql);
         $stmt -> execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         if (!empty($result)) {
-          foreach ($result as $blog_key => $blog) {?>
-           <a href="./blog/index.php?id=<?php echo $blog["blog_id"]?>">
+          foreach ($result as $blog_key => $blog) { ?>
+           <a href="./blog/index.php?id=<?php echo $blog["blog_id"] ?>">
             <div class="blog-card">
-              <h3><?php echo $blog["blog_id"] ?> <?php echo $blog["blog_title"] ?></h3>
+              <h3><?php echo $blog["blog_title"] ?></h3>
               <p><?php echo $blog["blog_content"] ?></p>
               <p>更新時間：<?php echo $blog["blog_modifyDate"]?></p>
+              <?php if (!empty($_SESSION["member"]) && $_SESSION["member"]['user_id'] == $blog["blog_fk"]) { ?>
+                <a href="./blog/edit.php?id=<?php echo $blog["blog_id"] ?>" class="btn edit">編輯</a>
+                <form action="./blog/action/delete.php" method="post" class="hidden">
+                  <input type="hidden" id="id" name="id" value="<?php echo $blog["blog_id"] ?>">
+                  <button type="submit" class="btn delete">刪除</button>
+                </form>
+              <?php } ?>
             </div>
             </a>
           <?php }
