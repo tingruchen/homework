@@ -51,7 +51,7 @@
             <div class="blog-card">
               <h3><?php echo $blog["blog_title"] ?></h3>
               <p><?php echo $blog["blog_content"] ?></p>
-              <p>更新時間：<?php echo $blog["blog_modifyDate"]?></p>
+              <p><?php echo $blog["blog_modifyDate"]?>，<?php echo $blog["user_lastName"] ?><?php echo $blog["user_firstName"] ?></p>
               <?php if (!empty($_SESSION["member"]) && $_SESSION["member"]['user_id'] == $blog["blog_fk"]) { ?>
                 <a href="./blog/edit.php?id=<?php echo $blog["blog_id"] ?>" class="btn edit">編輯</a>
                 <form action="./blog/action/delete.php" method="post" class="hidden">
